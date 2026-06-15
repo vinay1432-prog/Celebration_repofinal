@@ -1,0 +1,232 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#050816;
+    color:white;
+    font-family:'Segoe UI',sans-serif;
+    overflow:hidden;
+    height:100vh;
+}
+
+.screen{
+    display:none;
+    position:absolute;
+    width:100%;
+    height:100vh;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    padding:20px;
+}
+
+.active{
+    display:flex;
+}
+
+.stars{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background-image:
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 1px, transparent 1px);
+
+    background-size:
+    120px 120px,
+    200px 200px;
+
+    animation:starsMove 60s linear infinite;
+    opacity:.6;
+}
+
+@keyframes starsMove{
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(-500px);
+    }
+}
+
+.main-title{
+    font-size:3rem;
+    margin-bottom:20px;
+    text-shadow:0 0 20px #ff4d94;
+}
+
+.subtitle{
+    max-width:700px;
+    line-height:1.8;
+    color:#d1d5db;
+    margin-bottom:40px;
+}
+
+#beginBtn{
+    background:#ff4081;
+    color:white;
+    border:none;
+    padding:15px 40px;
+    border-radius:40px;
+    cursor:pointer;
+    font-size:1rem;
+    transition:.3s;
+}
+
+#beginBtn:hover{
+    transform:scale(1.05);
+}
+
+#storyText{
+    font-size:3rem;
+    max-width:900px;
+    animation:fadeIn 1.5s ease;
+}
+
+.nameReveal{
+    font-size:4rem;
+    color:#ff4081;
+    text-shadow:
+    0 0 20px #ff4081,
+    0 0 50px #ff4081;
+}
+
+.tapStart{
+    margin-top:30px;
+    opacity:.8;
+    animation:pulse 2s infinite;
+}
+
+#galleryImage{
+    width:350px;
+    max-width:90%;
+    border-radius:20px;
+    box-shadow:0 0 40px rgba(255,255,255,.2);
+    animation:zoomPhoto 8s linear forwards;
+}
+
+@keyframes zoomPhoto{
+    from{
+        transform:scale(1);
+    }
+    to{
+        transform:scale(1.08);
+    }
+}
+
+#galleryQuote{
+    margin-top:25px;
+    font-size:1.3rem;
+    max-width:700px;
+}
+
+#tapHint{
+    margin-top:20px;
+    color:#ff4081;
+    opacity:0;
+}
+
+.showHint{
+    opacity:1 !important;
+}
+
+#revealWord{
+    margin-top:25px;
+    font-size:2rem;
+    color:#ff4081;
+    font-weight:bold;
+    display:none;
+}
+
+.letterTitle{
+    color:#ff4081;
+    margin-bottom:30px;
+}
+
+#letterText{
+    max-width:800px;
+    line-height:2;
+    white-space:pre-line;
+    min-height:250px;
+}
+
+.birthdayFinal{
+    font-size:4rem;
+    color:#ff4081;
+    text-shadow:0 0 30px #ff4081;
+}
+
+.birthdayName{
+    margin-top:20px;
+    font-size:3rem;
+}
+
+.finalMessage{
+    margin-top:30px;
+    font-size:1.3rem;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes pulse{
+    50%{
+        opacity:1;
+    }
+}
+
+@media(max-width:768px){
+
+    .main-title{
+        font-size:2rem;
+    }
+
+    #storyText{
+        font-size:2rem;
+    }
+
+    .nameReveal{
+        font-size:2.5rem;
+    }
+
+    .birthdayFinal{
+        font-size:2.5rem;
+    }
+
+    .birthdayName{
+        font-size:2rem;
+    }
+}
+
+.glow{
+    animation:finalGlow 2s infinite alternate;
+}
+
+@keyframes finalGlow{
+
+    from{
+        text-shadow:
+            0 0 10px #ff4081,
+            0 0 20px #ff4081;
+    }
+
+    to{
+        text-shadow:
+            0 0 30px #ff4081,
+            0 0 60px #ff4081,
+            0 0 100px #ff4081;
+    }
+
+}
